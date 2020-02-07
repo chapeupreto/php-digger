@@ -2,31 +2,35 @@
 
 A simple way to fetch DNS Resource Records associated with a hostname.
 
-### How to
+## How to
 
 Using digger is easy as 1, 2, 3.
 
-	<?php
-	require 'vendor/autoload.php';
+```php
+<?php
+require 'vendor/autoload.php';
 
-	use Daniesy\Digger;
+use Daniesy\Digger;
 
-	$records = (new Digger)->getRecords('ping-pong.dev', 'A');
-	foreach($records as $record) {
-    	var_dump($record);
-	}
-	
-	if($records->has('127.0.0.1')) {
-		echo "The dns record is set";
-	}
+$records = (new Digger)->getRecords('ping-pong.dev', 'A');
+foreach($records as $record) {
+    var_dump($record);
+}
 
-### Installation
+if($records->has('127.0.0.1')) {
+    echo "The dns record is set";
+}
+```
 
-You can install `Digger` with composer by running the following command.
+## Installation
 
-`composer require daniesy/php-digger:dev-master`
+You can install `Digger` with composer by running the following command:
 
-### Parameters
+```bash
+composer require daniesy/php-digger:dev-master
+```
+
+## Parameters
 
 - **host**
    The host you want to fetch the DNS records from
